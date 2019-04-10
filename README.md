@@ -41,6 +41,27 @@ solver: 该类使用'liblinear'库，'newton-cg'，'sag'和'lbfgs'求解器实�
 
 'newton-cg'，'sag'和'lbfgs'求解器仅支持使用原始公式的L2正则化。'liblinear'求解器支持L1和L2正则化，具有仅针对L2惩罚的双重公式
 
+2019-4-10 22:00 -> 朴素贝斯分类器 以及交叉验证
 
+import sklearn.naive_bayes as sn
+
+model = sn.GaussianNB()
+
+pc = ms.cross_val_score(model, x, y, cv=10,
+                            scoring='precision_weighted')
+                            
+rc = ms.cross_val_score(model, x, y, cv=10,
+                            scoring='recall_weighted')
+                            
+f1 = ms.cross_val_score(model, x, y, cv=10,
+                            scoring='f1_weighted') 
+                            
+ac = ms.cross_val_score(model, x, y, cv=10,
+                            scoring='accuracy')  #指标是准确度
+
+交叉验证用于评估模型的预测性能，尤其是训练好的模型在新数据上的表现，可以在一定程度上减小过拟合。
+还可以从有限的数据中获取尽可能多的有效信息。
+
+              
 
 
