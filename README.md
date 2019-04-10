@@ -62,6 +62,10 @@ ac = ms.cross_val_score(model, x, y, cv=10,
 交叉验证用于评估模型的预测性能，尤其是训练好的模型在新数据上的表现，可以在一定程度上减小过拟合。
 还可以从有限的数据中获取尽可能多的有效信息。
 
-              
+2019-4-11 6：00 -> 混淆矩阵
+
+import sklearn.metrics as sm
+
+sm.confusion_martix(y,pred_y) 
 
 
