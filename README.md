@@ -26,3 +26,8 @@ n_estimators 森林树的数量
 
 条形统计图的两个条形公用一个x坐标，可以适当的偏移一点距离
 
+2019-4-10 8：00 -> 随机森林树模型 (时间周期对特征的影响)
+
+model = se.RandomForestRegressor(max_depth = n, n_estimators = m , random_state = x2, min_simples_split = x)
+
+参数的意思见 params.txt
