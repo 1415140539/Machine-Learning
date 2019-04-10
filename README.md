@@ -20,7 +20,9 @@ model = si.make_pipeline(sp.PolynomialFeatures(degree),sl.LinearRegression())
 
 t_model = st.DecisionTreeRegressor(max_depth = n)
 
-ada_model = se.AdaBoostRegressor(st.DecisionTreeRegressor(max_depth = n),n_estimator = m, random_state = x)
+ada_model = se.AdaBoostRegressor(st.DecisionTreeRegressor(max_depth = n),n_estimators = m, random_state = x) 
+
+n_estimators 森林树的数量
 
 条形统计图的两个条形公用一个x坐标，可以适当的偏移一点距离
 
