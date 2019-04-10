@@ -31,3 +31,16 @@ n_estimators 森林树的数量
 model = se.RandomForestRegressor(max_depth = n, n_estimators = m , random_state = x2, min_simples_split = x)
 
 参数的意思见 params.txt
+
+2019-4-10 9：00 -> 逻辑回归分类器
+model = sl.LogisticRegressor(solver = "" , C = n) C 惩罚值，对于样本数量少的可以增加惩罚值
+
+max_iter  int，默认值：100 仅适用于newton-cg，sag和lbfgs求解器。求解器收敛的最大迭代次数。
+
+solver: 该类使用'liblinear'库，'newton-cg'，'sag'和'lbfgs'求解器实现正则化逻辑回归。
+
+'newton-cg'，'sag'和'lbfgs'求解器仅支持使用原始公式的L2正则化。'liblinear'求解器支持L1和L2正则化，具有仅针对L2惩罚的双重公式
+
+
+
+
