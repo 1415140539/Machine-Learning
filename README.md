@@ -4,6 +4,13 @@
 
 我的机器学习
 
+
+偏差：模型对于不同的训练样本集，预测结果的平均误差。
+
+方差：模型对于不同训练样本集的敏感程度。
+
+噪声：数据集本身的一项属性
+
 2019-4-09 5:50->岭回归alpha 正则化直线  fit_intercept 计算直线的截距, max_iter 最大迭代次数 （不同的alpha 对直线得到影响较大）
 sl.Ridge(alpha,fit_intercept,max_iter = 1000)
 岭回归跟线性回归比较增加了正则化，可以防止过拟合，采用L2惩罚，加上所有参数的平方和
@@ -79,3 +86,20 @@ sm.classfication_report(y,pred_y)
 import sklearn.preprocessing as sp
 
 #处理数据 (测试数据前先用sp.LabelEncoder()对其进行编码，对于数字特征有意义的不用编码)
+
+2019-4-11-10.10 ->交叉验证曲线(随机森林树)
+
+imoprt sklearn.model_selection as ms
+
+验证曲线 train_scores,test_scores = ms.validation_curver(model,x,y,"n_estimators",n_estimators,cv = n) #"分号中的是要测量的属性
+学习曲线 train_sizes,train_scores,test_scores = ms.learning_curver(model,x,y,train_size = n, cv =m) 
+
+验证曲线判定过拟合于欠拟合。
+验证曲线是非常有用的工具，他可以用来提高模型的性能，原因是他能处理过拟合和欠拟合问题
+
+验证曲线是一种通过定位过拟合于欠拟合等诸多问题的方法，帮助提高模型性能的有效工具。
+
+验证曲线绘制的是准确率与模型参数之间的关系
+
+learning_curve中的train_sizes参数控制产生学习曲线的训练样本的绝对/相对数量，我们设置的train_sizes=np.linspace(0.1, 1.0, 10)，将训练集大小划分为10个相等的区间。learning_curve默认使用分层k折交叉验证计算交叉验证的准确率，我们通过cv设置klearning_curve中的train_sizes参数控制产生学习曲线的训练样本的绝对/相对数量，此处，我们设置的train_sizes=np.linspace(0.1, 1.0, 10)，将训练集大小划分为10个相等的区间。learning_curve默认使用分层k折交叉验证计算交叉验证的准确率，我们通过cv设置k
+
