@@ -87,7 +87,7 @@ import sklearn.preprocessing as sp
 
 #处理数据 (测试数据前先用sp.LabelEncoder()对其进行编码，对于数字特征有意义的不用编码)
 
-2019-4-11-10.10 ->交叉验证曲线(随机森林树)
+2019-4-11-10:10 ->交叉验证曲线(随机森林树)
 
 imoprt sklearn.model_selection as ms
 
@@ -102,4 +102,16 @@ imoprt sklearn.model_selection as ms
 验证曲线绘制的是准确率与模型参数之间的关系
 
 learning_curve中的train_sizes参数控制产生学习曲线的训练样本的绝对/相对数量，我们设置的train_sizes=np.linspace(0.1, 1.0, 10)，将训练集大小划分为10个相等的区间。learning_curve默认使用分层k折交叉验证计算交叉验证的准确率。
+
+2019-4-11 11:03 -> SVM（支持向量机）
+
+import sklearn.svm as svm
+
+model = svm.SVC(kernel = "")  kernel = "linear" , "poly" + degree  , rbf + C + gamma  + probability
+
+当一个类被另一个类包围，这种形式的数据属于线性不可分割状态，这样的样本根本不适合线性分类器
+
+某一个类型的数据量可能比其他类型多很多，这种条件下训练的分类器就会存在较大的偏差，边界线不能反映出数据的真是特性，因此需要考虑修正样本的比例，或者想办法调和。
+
+
 
