@@ -254,9 +254,9 @@ pred_y = model.fit_predict(x)
 
 model.core_sample_indices_ 核心
 
-model.labels_ 带外点
+model.labels_ 边缘
 
-~(core|daiwai)边缘点
+~(core|daiwai) 带外
 
 esp = 每次收缩状态，越大收缩越快，但可能错过最佳的
 
