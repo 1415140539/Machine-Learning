@@ -68,4 +68,14 @@ import sklearn.metrics as sm
 
 sm.confusion_martix(y,pred_y) 
 
+2019-4-11 8:00  - >性能报告
 
+import learn.metrics as sm
+
+sm.classfication_report(y,pred_y)
+
+2019-4-11 9：00 —> 汽车评估（随机森林树）
+
+import sklearn.preprocessing as sp
+
+#处理数据 (测试数据前先用sp.LabelEncoder()对其进行编码，对于数字特征有意义的不用编码)
