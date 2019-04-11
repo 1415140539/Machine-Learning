@@ -239,6 +239,11 @@ average使用两组每次观察的平均距离。
 complete最大连锁使用两组中所有观测值之间的最大距离。
 single使用两组所有观测值之间的最小距离。
 
+import sklearn.metrics as sm
+sm.silhouette_score(x,model.labels_,sample_size = len(x),metric = "euclidean")
+
+度量聚类效果的重要指标：轮廓系数。轮廓系数用于表示集群是不是被划分得合理，每个集群是否足够密集。
+
 
 Knn:
 优点
