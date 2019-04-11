@@ -216,8 +216,32 @@ predict_proba(x) 预测结果的分类概率
 随机森林/组合树 (Random Forests) 它在进行特征选择与构建有效的分类器时非常有用。一种常用的降维方法是对目标属性产生许多巨大的树，然后根据对每个属性的统计结果找到信息量最大的特征子集。
 
 主成分分析 (PCA) 
-在进行 PCA 变换后会丧失数据的解释性。如果说，数据的解释能力对你的分析来说很重要，那么 PCA 对你来说可能就不适用了。，
+在进行 PCA 变换后会丧失数据的解释性。如果说，数据的解释能力对你的分析来说很重要，那么 PCA 对你来说可能就不适用了。
 
+2019-4-11 16：43 -> K-means 聚类 针对数据样本间距离的计算方法  -- 利用聚类实现矢量量化
+
+import sklearn.cluster as sc
+
+model = sc.KMeans(init = "k-means++", n_clusters = n, init = m)
+
+n_clusters ：要形成的簇数以及要生成的质心数 默认8
+
+n_init ： int，默认值：10 使用不同质心种子运行k-means算法的时间。在惯性方面，最终结果将是n_init连续运行的最佳输出。
+
+init ：初始化方法，默认为'k-means ++'：'k-means ++'：以智能方式选择初始聚类中心进行k均值聚类
+
+2019-4-11 16.14 --> 凝聚层次聚类
+
+import sklearn.cluster as sc
+
+model = sc.AgglomerativeCluster(linkage = "ward")
+
+link ： {“ward”，“complete”，“average”，“single”}
+
+ward最小化被合并的集群的方差。
+average使用两组每次观察的平均距离。
+complete最大连锁使用两组中所有观测值之间的最大距离。
+single使用两组所有观测值之间的最小距离。
 Knn:
 优点
 可用于非线性分类；
