@@ -250,8 +250,9 @@ import sklearn.cluster as sc
 
 model = cs.DBCAN(esp=n,min_samples = m)
 
+model.fit(x)
+
 esp = 每次收缩状态，越大收缩越快，但可能错过最佳的
-model.fit_predict(x)
 
 Knn:
 优点
