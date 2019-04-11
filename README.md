@@ -244,6 +244,14 @@ sm.silhouette_score(x,model.labels_,sample_size = len(x),metric = "euclidean")
 
 度量聚类效果的重要指标：轮廓系数。轮廓系数用于表示集群是不是被划分得合理，每个集群是否足够密集。
 
+2019-4-11 22:02 - >DBCSAN
+ 
+import sklearn.cluster as sc
+
+model = cs.DBCAN(esp=n,min_samples = m)
+
+esp = 每次收缩状态，越大收缩越快，但可能错过最佳的
+model.fit_predict(x)
 
 Knn:
 优点
@@ -270,3 +278,5 @@ xgboost
 支持列抽样，也就是随机选择特征，增强了模型的稳定性
 
 对缺失值不敏感，可以学习到包含缺失值的特征的分裂方向
+
+
