@@ -101,5 +101,5 @@ imoprt sklearn.model_selection as ms
 
 验证曲线绘制的是准确率与模型参数之间的关系
 
-learning_curve中的train_sizes参数控制产生学习曲线的训练样本的绝对/相对数量，我们设置的train_sizes=np.linspace(0.1, 1.0, 10)，将训练集大小划分为10个相等的区间。learning_curve默认使用分层k折交叉验证计算交叉验证的准确率，我们通过cv设置klearning_curve中的train_sizes参数控制产生学习曲线的训练样本的绝对/相对数量，此处，我们设置的train_sizes=np.linspace(0.1, 1.0, 10)，将训练集大小划分为10个相等的区间。learning_curve默认使用分层k折交叉验证计算交叉验证的准确率，我们通过cv设置k
+learning_curve中的train_sizes参数控制产生学习曲线的训练样本的绝对/相对数量，我们设置的train_sizes=np.linspace(0.1, 1.0, 10)，将训练集大小划分为10个相等的区间。learning_curve默认使用分层k折交叉验证计算交叉验证的准确率。
 
