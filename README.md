@@ -250,7 +250,13 @@ import sklearn.cluster as sc
 
 model = cs.DBCAN(esp=n,min_samples = m)
 
-model.fit(x)
+pred_y = model.fit_predict(x)
+
+model.core_sample_indices_ 核心
+
+model.labels_ 带外点
+
+~(core|daiwai)边缘点
 
 esp = 每次收缩状态，越大收缩越快，但可能错过最佳的
 
