@@ -113,5 +113,7 @@ model = svm.SVC(kernel = "")  kernel = "linear" , "poly" + degree  , rbf + C + g
 
 某一个类型的数据量可能比其他类型多很多，这种条件下训练的分类器就会存在较大的偏差，边界线不能反映出数据的真是特性，因此需要考虑修正样本的比例，或者想办法调和。
 
-
+degree -- > 多项式的最高次数
+gammma --- > 默认为 1/(n_features)
+predict_proba(x) 预测结果的分类概率
 
