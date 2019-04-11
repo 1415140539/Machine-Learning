@@ -32,6 +32,23 @@ model = si.make_pipeline(sp.PolynomialFeatures(degree),sl.LinearRegression())
 2019-4-10 6：08 -> 决策树跟自适应增强树模型 以及特征的重要性 （波士顿房价的比较）
 
 t_model = st.DecisionTreeRegressor(max_depth = n)
+决策树自身的优点
+
+计算简单，易于理解，可解释性强；
+
+比较适合处理有缺失属性的样本；
+
+能够处理不相关的特征；
+
+在相对短的时间内能够对大型数据源做出可行且效果良好的结果。
+
+缺点
+
+容易发生过拟合（随机森林可以很大程度上减少过拟合）；
+
+忽略了数据之间的相关性；
+
+对于那些各类别样本数量不一致的数据，在决策树当中,信息增益的结果偏向于那些具有更多数值的特征（只要是使用了信息增益，都有这个缺点，如RF）。
 
 ada_model = se.AdaBoostRegressor(st.DecisionTreeRegressor(max_depth = n),n_estimators = m, random_state = x) 
 
@@ -110,27 +127,6 @@ sm.classfication_report(y,pred_y)
 import sklearn.preprocessing as sp
 
 #处理数据 (测试数据前先用sp.LabelEncoder()对其进行编码，对于数字特征有意义的不用编码)
-
-
-决策树自身的优点
-
-计算简单，易于理解，可解释性强；
-
-比较适合处理有缺失属性的样本；
-
-能够处理不相关的特征；
-
-在相对短的时间内能够对大型数据源做出可行且效果良好的结果。
-
-
-
-缺点
-
-容易发生过拟合（随机森林可以很大程度上减少过拟合）；
-
-忽略了数据之间的相关性；
-
-对于那些各类别样本数量不一致的数据，在决策树当中,信息增益的结果偏向于那些具有更多数值的特征（只要是使用了信息增益，都有这个缺点，如RF）。
 
 优点
 
@@ -242,6 +238,8 @@ ward最小化被合并的集群的方差。
 average使用两组每次观察的平均距离。
 complete最大连锁使用两组中所有观测值之间的最大距离。
 single使用两组所有观测值之间的最小距离。
+
+
 Knn:
 优点
 可用于非线性分类；
